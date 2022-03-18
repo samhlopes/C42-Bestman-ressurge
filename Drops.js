@@ -16,9 +16,10 @@ class Drops {
         }
     }
 
-    display() {
-
-        ellipse(rain.position.x, rain.position.y, 55, 55)
-
-    }
+    showDrop(){ 
+        
+        fill("blue");
+        ellipseMode(CENTER); 
+        ellipse(this.rain.position.x,this.rain.position.y,this.radius,this.radius); }
+        
 }

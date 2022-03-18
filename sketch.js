@@ -38,6 +38,7 @@ function setup() {
         drops.push(new Drops(random(0, 400), random(0, 400)))
     }
 
+
 }
 
 function draw() {
@@ -89,8 +90,7 @@ function draw() {
     umbrella.display();
 
     //exibindo gotas de chuva
-    drops.update();
-    drops.display();
+    
 
     drawSprites();
 }
