@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 var thunder, thunder1, thunder2, thunder3, thunder4;
 var batAnimation, bat;
 var maxDrops = 100;
-
+var drops = [];
 var engine, world;
 
 var rand;
@@ -32,10 +32,9 @@ function setup() {
 
     createCanvas(400, 700);
     umbrella = new Umbrella(200, 500);
-
     //criando gotas
-    for (var i = 0; i > maxDrops; i++) {
-        drops.push(new Drops(random(0, 400), random(0, 400)))
+    for (var i = 0; i < maxDrops; i++) {
+        drops.push(new Drops(random(0, 400), random(0, 400)));
     }
 
 
@@ -75,12 +74,6 @@ function draw() {
 
 
     }
-
-    if (frameCount >= 200) {
-
-        image(this.batmanImg, pos.x, pos.y + 70, 200, 300)
-
-    }
     
 
     if (thunderCreatedFrame + 10 === frameCount && thunder) {
@@ -88,9 +81,12 @@ function draw() {
     }
 
     umbrella.display();
-
-    //exibindo gotas de chuva
     
+    //exibindo gotas de chuva
+    for (var j = 0; j < maxDrops; j++){
+    drops[j].display();
+    drops[j].update();
+    }
 
     drawSprites();
 }
